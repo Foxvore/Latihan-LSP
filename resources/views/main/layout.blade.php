@@ -16,7 +16,7 @@
     <!-- ===== Menu ===== -->
     <div class="menu">
         <b>
-            <a href="/Home">HOME</a>
+            <a href="/home">HOME</a>
             {{-- @if (session('user')->role == 'admin') --}}
                 <a href="/guru/index">GURU</a>
                 <a href="/jurusan/index">JURUSAN</a>
