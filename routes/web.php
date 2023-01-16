@@ -18,7 +18,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -37,7 +37,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/', [IndexController::class, 'index']);
+Route::post('/login/admin', [IndexController::class, 'loginAdmin']);
+Route::post('/login/siswa', [IndexController::class, 'loginSiswa']);
+Route::post('/login/guru', [IndexController::class, 'loginGuru']);
 Route::get('/home', [IndexController::class, 'home']);
+Route::get('/logout', [IndexController::class, 'logout']);
 
 Route::prefix('guru')->group(function(){
     Route::get('/index', [GuruController::class, 'index']);
