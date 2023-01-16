@@ -10,7 +10,7 @@
 <body>
     <!-- ===== Header ===== -->
     <div class="header">
-        <img src="{{ asset('/gambar/header.jpg') }}" alt="" width="100%" heigh="405">
+        <img src="{{ asset('/gambar/header.jpg') }}" alt="" width="100%" heigh="40%">
     </div>
 
     <!-- ===== Menu ===== -->

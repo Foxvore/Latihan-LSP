@@ -23,8 +23,8 @@
                         <td>{{ $g->alamat }}</td>
                         <td>{{ $g->password }}</td>
                         <td>
-                            <a href="/guru/edit/{{ $g->$id }}" class="button-warning">EDIT</a>
-                            <a href="/guru/destroy/{{ $g->$id }}" onClick="return confirm('Yakin Dihapus?')" class="button-danger">HAPUS</a>
+                            <a href="/guru/edit/{{ $g->id }}" class="button-warning">EDIT</a>
+                            <a href="/guru/destroy/{{ $g->id }}" onClick="return confirm('Yakin Dihapus?')" class="button-danger">HAPUS</a>
                         </td>
                     </tr>
                 @endforeach
