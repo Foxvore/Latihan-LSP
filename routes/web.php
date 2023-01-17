@@ -5,6 +5,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MapelController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -71,6 +72,15 @@ Route::prefix('mapel')->group(function(){
     Route::get('/edit/{mapel}', [MapelController::class, 'edit']);
     Route::post('/update/{mapel}', [MapelController::class, 'update']);
     Route::get('/destroy/{mapel}', [MapelController::class, 'destroy']);
+});
+
+Route::prefix('kelas')->group(function(){
+    Route::get('/index', [kelasController::class, 'index']);
+    Route::get('/create', [kelasController::class, 'create']);
+    Route::post('/store', [kelasController::class, 'store']);
+    Route::get('/edit/{kelas}', [kelasController::class, 'edit']);
+    Route::post('/update/{kelas}', [kelasController::class, 'update']);
+    Route::get('/destroy/{kelas}', [kelasController::class, 'destroy']);
 });
 
 require __DIR__.'/auth.php';
