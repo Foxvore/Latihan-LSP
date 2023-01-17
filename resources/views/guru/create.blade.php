@@ -7,33 +7,33 @@
             @csrf
             <table width="50%">
                 <tr>
-                    <td width="25%">NIP</th>
-                    <td width="25%">
+                    <td class="bar">NIP</th>
+                    <td class="bar">
                         <input type="text" name="nip">
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">NAMA GURU</th>
-                    <td width="25%">
+                    <td class="bar">NAMA GURU</th>
+                    <td class="bar">
                         <input type="text" name="nama_guru">
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">JENIS KELAMIN</th>
-                    <td width="25%">
+                    <td class="bar">JENIS KELAMIN</th>
+                    <td class="bar">
                         <input type="radio" name="jk" value="L">Laki-Laki
                         <input type="radio" name="jk" value="P">Perempuan
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">ALAMAT</th>
-                    <td width="25%">
+                    <td class="bar">ALAMAT</th>
+                    <td class="bar">
                         <textarea name="alamat" cols="30" rows="5"></textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">PASSWORD</th>
-                    <td width="25%">
+                    <td class="bar">PASSWORD</th>
+                    <td class="bar">
                         <input type="password" name="password">
                     </td>
                 </tr>

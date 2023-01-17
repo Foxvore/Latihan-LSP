@@ -7,33 +7,33 @@
             @csrf
             <table width="50%">
                 <tr>
-                    <td width="25%">NIP</td>
-                    <td width="25%">
+                    <td class="bar">NIP</td>
+                    <td class="bar">
                         <input type="text" name="nip" value="{{ $guru->nip }}">
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">NAMA GURU</td>
-                    <td width="25%">
+                    <td class="bar">NAMA GURU</td>
+                    <td class="bar">
                         <input type="text" name="nama_guru" value="{{ $guru->nama_guru }}">
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">JENIS KELAMIN</td>
-                    <td width="25%">
+                    <td class="bar">JENIS KELAMIN</td>
+                    <td class="bar">
                         <input type="radio" name="jk" value="L" {{ $guru->jk == 'L' ? 'cheked' : '' }}>Laki-Laki
                         <input type="radio" name="jk" value="P" {{ $guru->jk == 'P' ? 'cheked' : '' }}>Perempuan
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">ALAMAT</td>
-                    <td width="25%">
+                    <td class="bar">ALAMAT</td>
+                    <td class="bar">
                         <textarea name="alamat" cols="30" rows="5">{{ $guru->alamat }}</textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td width="25%">PASSWORD</td>
-                    <td width="25%">
+                    <td class="bar">PASSWORD</td>
+                    <td class="bar">
                         <input type="password" name="password" value="{{ $guru->password }}">
                     </td>
                 </tr>
