@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
 use App\Models\Kelas;
+
 class JurusanController extends Controller
 {
     public function index()
