@@ -4,6 +4,12 @@
         <b>
             <h2>LIST DATA GURU</h2>
             <a href="/guru/create" class="button-primary">Tambah Data</a>
+            @if (session('success'))
+                <p class="text-success">{{ section('success') }}</p>
+            @endif
+            @if (session('error'))
+                <p class="text-danger">{{ section('error') }}</p>
+            @endif
             <table cellpadding="10">
                 <tr>
                     <th>NO</th>
