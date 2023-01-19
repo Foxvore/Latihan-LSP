@@ -9,7 +9,7 @@ class Nilai extends Model
 {
     use HasFactory;
 
-    protected $table = 'mengajars';
+    protected $table = 'nilais';
     protected $guarded = ['id'];
 
     public function mengajar()
