@@ -16,16 +16,16 @@ class NilaiController extends Controller
      */
     public function index()
     {
-        // if (session('user')->role == 'guru') {
-        //     $nilai = Nilai::whereHas('mengajar', function ($query){
-        //         $query->where('guru_id', session('user')->id);
-        //     });
-        // } else {
-        //     $nilai = Nilai::where('nis', session('user')->nis)->get();
-        // }
+        if (session('user')->role == 'guru') {
+            $nilai = Nilai::whereHas('mengajar', function ($query){
+                $query->where('guru_id', session('user')->id);
+            })->get();
+        } else {
+            $nilai = Nilai::where('siswa_id', session('user')->id)->get();
+        }
         
         return view('nilai.index', [
-            'nilai' => Nilai::all()
+            'nilai' => $nilai
         ]);
     }
 
@@ -36,13 +36,10 @@ class NilaiController extends Controller
      */
     public function create()
     {
-        // $mengajar = Mengajar::where('guru_id', session('user')->id);
-        $mengajar = Mengajar::all();
+        $mengajar = Mengajar::where('guru_id', session('user')->id);
         return view ('nilai.create', [
-            // 'mengajar' => $mengajar->get(),
-            'mengajar' => $mengajar,
-            // 'siswa' => Siswa::whereIn('kelas_id', $mengajar->get('kelas_id'))->get(),
-            'siswa' => Siswa::all(),
+            'mengajar' => $mengajar->get(),
+            'siswa' => Siswa::whereIn('kelas_id', $mengajar->get('kelas_id'))->get(),
         ]);
     }
 
