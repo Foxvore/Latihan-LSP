@@ -5,7 +5,7 @@ import "../../css/style.css"
 
 const Home = () => {
     const { user } = usePage().props.auth;
-    console.log("USER", user);
+    console.log("User", user);
     return (
         <>
             <Layout>
@@ -13,7 +13,7 @@ const Home = () => {
                     <b>
                         <br />
                         SELAMAT DATANG DENGAN AKSES MASUK { " " }
-                        { user?.kode_admin ?? user?.nip ?? user?.nis}
+                        { user.id_admin ?? user.nip ?? user.nis }
                     </b>
                 </center>
             </Layout>

@@ -20,15 +20,15 @@ export default function Login() {
             password,
         });
     };
-    const handleLoginSiswa = () => {
-        Inertia.post("/login/siswa", {
-            nis,
-            password,
-        });
-    };
     const handleLoginGuru = () => {
         Inertia.post("/login/guru", {
             nip,
+            password,
+        });
+    };
+    const handleLoginSiswa = () => {
+        Inertia.post("/login/siswa", {
+            nis,
             password,
         });
     };
@@ -56,16 +56,16 @@ export default function Login() {
                         }}>Admin</button>
 
                         <button className="button-primary" onClick={() => {
-                            setFormSiswaVisible(!formSiswaVisible);
-                            setFormAdminVisible(false);
-                            setFormGuruVisible(false);
-                        }}>Siswa</button>
-
-                        <button className="button-primary" onClick={() => {
                             setFormGuruVisible(!formGuruVisible);
                             setFormSiswaVisible(false);
                             setFormAdminVisible(false);
                         }}>Guru</button>
+                        
+                        <button className="button-primary" onClick={() => {
+                            setFormSiswaVisible(!formSiswaVisible);
+                            setFormAdminVisible(false);
+                            setFormGuruVisible(false);
+                        }}>Siswa</button>
 
                         <hr />
                         <b>Login sesuai dengan anda!</b>
@@ -81,7 +81,7 @@ export default function Login() {
                             <tr>
                                 <td width="25%">Kode Admin</td>
                                 <td width="25%">
-                                    <input type="text" onChange={(e) => setIdAdmin(e.target.value)} />
+                                    <input type="text" onChange={(e) => setAdmin(e.target.value)} />
                                 </td>
                             </tr>
                             <tr>
@@ -101,36 +101,7 @@ export default function Login() {
                             </tr>
                         </table>
                     </div>
-                    {/*===== Form Login Siswa =====*/}
-                    <div style={{ display: formSiswaVisible ? "block" : "none" }}>
-                        <center>
-                            <b>Login Siswa</b>
-                            <p>{ error }</p>
-                        </center>
-                        <table>
-                            <tr>
-                                <td width="25%">NIS</td>
-                                <td width="25%">
-                                    <input type="text" onChange={(e) => setNis(e.target.value)} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="25%">Password</td>
-                                <td width="25%">
-                                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colSpan="2">
-                                    <center>
-                                        <button className="button-primary" type="button" onClick={() => handleLoginSiswa()}>
-                                            Login
-                                        </button>
-                                    </center>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+
                     {/*===== Form Login Guru =====*/}
                     <div style={{ display: formGuruVisible ? "block" : "none" }}>
                         <center>
@@ -142,6 +113,37 @@ export default function Login() {
                                 <td width="25%">NIP</td>
                                 <td width="25%">
                                     <input type="text" onChange={(e) => setNip(e.target.value)} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">Password</td>
+                                <td width="25%">
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="2">
+                                    <center>
+                                        <button className="button-primary" type="button" onClick={() => handleLoginGuru()}>
+                                            Login
+                                        </button>
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    {/*===== Form Login Siswa =====*/}
+                    <div style={{ display: formSiswaVisible ? "block" : "none" }}>
+                        <center>
+                            <b>Login Siswa</b>
+                            <p>{ error }</p>
+                        </center>
+                        <table>
+                            <tr>
+                                <td width="25%">NIS</td>
+                                <td width="25%">
+                                    <input type="text" onChange={(e) => setNis(e.target.value)} />
                                 </td>
                             </tr>
                             <tr>

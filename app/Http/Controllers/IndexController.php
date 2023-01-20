@@ -26,9 +26,9 @@ class IndexController extends Controller
 
     public function loginAdmin(Request $request)
     {
-        $admin = Administrator::where('idAdmin', $request->idAdmin)->where('password', $request->password)->first();
+        $admin = Administrator::where('id_admin', $request->idAdmin)->where('password', $request->password)->first();
 
-        if (!$admin) return back() ->with('error', "Kode admin atau password salah!");
+        if (!$admin) return back()->with('error', "Kode admin atau password salah!");
 
         $admin->role = 'admin';
         session(['user' => $admin]);
@@ -40,7 +40,7 @@ class IndexController extends Controller
     {
         $siswa = Siswa::where('nis', $request->nis)->where('password', $request->password)->first();
 
-        if (!$siswa) return back() ->with('error', "NIS atau password salah!");
+        if (!$siswa) return back()->with('error', "NIS atau password salah!");
 
         $siswa->role = 'siswa';
         session(['user' => $siswa]);
@@ -52,7 +52,7 @@ class IndexController extends Controller
     {
         $guru = Guru::where('nip', $request->nip)->where('password', $request->password)->first();
 
-        if (!$guru) return back() ->with('error', "NIP atau password salah!");
+        if (!$guru) return back()->with('error', "NIP atau password salah!");
 
         $guru->role = 'guru';
         session(['user' => $guru]);
